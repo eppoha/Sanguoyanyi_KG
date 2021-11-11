@@ -1,0 +1,62 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ffa218c7-9b8e-4a77-a31f-c834796b0a72</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Sanguoyanyi_KG.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Sanguoyanyi_KG</Name>
+    <RootNamespace>Sanguoyanyi_KG</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="baike_spider-master\html_downloader.py" />
+    <Compile Include="baike_spider-master\html_outputer.py" />
+    <Compile Include="baike_spider-master\html_parser.py" />
+    <Compile Include="baike_spider-master\spider_main.py" />
+    <Compile Include="baike_spider-master\url_manager.py" />
+    <Compile Include="baike_spider-master\__init__.py" />
+    <Compile Include="import_csv_to_neo4j.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sanguoyanyi_KG.py" />
+    <Compile Include="SanGuo_ner.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SanGuo_seg.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test1.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="baike_spider-master\README.md" />
+    <Content Include="MSYH.TTF" />
+    <Content Include="sanguoyanyi.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="baike_spider-master\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
